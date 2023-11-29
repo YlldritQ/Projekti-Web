@@ -10,9 +10,11 @@ display: flex;
 .butoni{
     
     border-radius: 15%;
+    color: black
 }
 .butoni:hover{
 background-color: black;
+color: white;
 }
 
 
