@@ -1,3 +1,48 @@
+.headerC{
+    background-color: black;
+   margin-top: 0%;
+   margin-bottom: 10%;
+}
+.buttonfield{
+display: flex;
+ justify-content: space-between;
+}
+.butoni{
+    
+    border-radius: 15%;
+}
+.butoni:hover{
+background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .photoLajme{
     display: flex;
     margin: 0 2%;
@@ -27,25 +72,6 @@
     height: 250px;
     object-fit: cover;
 
-}
-.buttonfield{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content:flex-end;
-    align-items: center;
-    margin: 0 5%;    
-}
-.butoni{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px;
-    border-radius: 15px;
-    width: 80px;
-    height: 30px;
-    font-size: 15px;
-    margin: 5px;
 }
 main{
     background-color: aqua;
