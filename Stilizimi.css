@@ -1,47 +1,61 @@
 .headerC{
     background-color: black;
    margin-top: 0%;
-   margin-bottom: 10%;
+   margin-bottom: 0%;
+   padding-top: 5%;
+   padding-bottom: 3%;
+   border-bottom-width: 10px;
+   border-bottom-style: groove;
+   border-bottom-color: white;
+   border-radius: 3%;
+   
+   
+
+
+   
 }
+
 .buttonfield{
-display: flex;
- justify-content: space-between;
+
+ justify-content: center;
+
+ 
 }
+
 .butoni{
     
     border-radius: 15%;
-    color: black
+    color: black;
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    
 }
+
 .butoni:hover{
 background-color: black;
 color: white;
 }
 
+.butoni:active{
+    opacity: 0.2;
+}
 
+.image{
+    
+    width: 200px;
+    height: 200px;
+}
 
+.search-bar{
+    background-color: aqua;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    float: right;
+    padding: 0.5%;
+    color: brown;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
