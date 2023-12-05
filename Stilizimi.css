@@ -8,36 +8,35 @@
    border-bottom-style: groove;
    border-bottom-color: white;
    border-radius: 3%;
-   
-   
-
-
-   
 }
 
-.buttonfield{
+.field{
 
  justify-content: center;
 
  
 }
+ul{
+    list-style: none;
+}
 
-.butoni{
-    
-    border-radius: 15%;
-    color: black;
+.titulli{
+    padding: 2% 3%;
+    display: flex;
+    color: white;
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
-
+    justify-content: space-around;
+    
     
 }
 
-.butoni:hover{
-background-color: black;
-color: white;
+.titulli:hover{
+background-color: white;
+color: black;
 }
 
-.butoni:active{
+.titulli:active{
     opacity: 0.2;
 }
 
@@ -91,4 +90,44 @@ color: white;
 }
 main{
     background-color: aqua;
+}
+.footerC{
+    background-color: black;
+   padding-bottom: 5%;
+   padding-top: 3%;
+   border-top-width: 10px;
+   border-top-style: groove;
+   border-top-color: white;
+   border-radius: 3%;
+   color: white;
+   
+   
+   
+}
+.logot{
+    list-style: none;
+}
+
+.logo{
+    display: flex;
+    width: 75px;
+    height: 75px;
+    padding: 20px 20px;
+}
+.logo:hover{
+cursor: pointer;
+}
+.referencat{
+list-style: none;
+}
+.referenca{
+display: flex;
+padding: 20px 20px;
+justify-content: center;
+
+}
+.referenca:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
 }
