@@ -10,24 +10,19 @@
    border-radius: 3%;
 }
 
-.field{
-
+.titujt{
+ list-style: none;
+ display: flex;
  justify-content: center;
-
- 
-}
-ul{
-    list-style: none;
+ justify-content: space-between;
 }
 
 .titulli{
     padding: 2% 3%;
-    display: flex;
     color: white;
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
     justify-content: space-around;
-    
     
 }
 
@@ -37,13 +32,13 @@ color: black;
 }
 
 .titulli:active{
-    opacity: 0.2;
+    opacity: 0.5;
 }
 
 .image{
-    
-    width: 200px;
-    height: 200px;
+    width: 90px;
+    height: 90px;
+    padding-left: 5%;
 }
 
 .search-bar{
@@ -51,8 +46,9 @@ color: black;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     float: right;
-    padding: 0.5%;
     color: brown;
+    padding-right:0.5%;
+    margin-right: 0.5%;
 
 }
 
@@ -92,42 +88,45 @@ main{
     background-color: aqua;
 }
 .footerC{
-    background-color: black;
-   padding-bottom: 5%;
-   padding-top: 3%;
+    background-color: #111;
+   padding-bottom:0.5%;
+   padding-top: 0.5%;
    border-top-width: 10px;
    border-top-style: groove;
    border-top-color: white;
    border-radius: 3%;
    color: white;
    
-   
-   
+ 
 }
 .logot{
-    list-style: none;
-}
-
-.logo{
     display: flex;
-    width: 75px;
-    height: 75px;
-    padding: 20px 20px;
-}
-.logo:hover{
-cursor: pointer;
+    justify-content: center;
+    justify-content: space-around;
 }
 .referencat{
-list-style: none;
-}
-.referenca{
+font-size: larger;
 display: flex;
 padding: 20px 20px;
 justify-content: center;
+list-style: none;
+justify-content: space-between;
+border-style: groove;
+color: white;
+
 
 }
-.referenca:hover{
-    cursor: pointer;
-    background-color: white;
-    color: black;
+.referenca a{
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+.referenca a:hover{
+    opacity: 1.5;
+}
+h3{
+    background-color: #000;
+    padding: 40px;
+    text-align: center;
 }
