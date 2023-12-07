@@ -1,20 +1,22 @@
 .headerC{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15 15 px;
     background-color: black;
-   margin-top: 0%;
-   margin-bottom: 0%;
-   padding-top: 5%;
-   padding-bottom: 3%;
    border-bottom-width: 10px;
    border-bottom-style: groove;
    border-bottom-color: white;
-   border-radius: 3%;
+   border-radius: 1%;
 }
 
 .titujt{
  list-style: none;
  display: flex;
  justify-content: center;
- justify-content: space-between;
+
+
 }
 
 .titulli{
@@ -22,7 +24,7 @@
     color: white;
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    justify-content: space-around;
+    
     
 }
 
@@ -30,25 +32,22 @@
 background-color: white;
 color: black;
 }
-
-.titulli:active{
-    opacity: 0.5;
-}
-
 .image{
+    display: flex;
     width: 90px;
     height: 90px;
-    padding-left: 5%;
+    padding-left: 2%;
+    padding-bottom: 1.5%;
 }
 
 .search-bar{
+    display: flex;
+    justify-content: right;
     background-color: aqua;
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    float: right;
     color: brown;
-    padding-right:0.5%;
-    margin-right: 0.5%;
+    
 
 }
 
@@ -102,7 +101,9 @@ main{
 .logot{
     display: flex;
     justify-content: center;
+    padding-top: 2%;
     justify-content: space-around;
+    
 }
 .referencat{
 font-size: larger;
@@ -111,7 +112,6 @@ padding: 20px 20px;
 justify-content: center;
 list-style: none;
 justify-content: space-between;
-border-style: groove;
 color: white;
 
 
@@ -125,8 +125,11 @@ color: white;
 .referenca a:hover{
     opacity: 1.5;
 }
-h3{
+.Copy{
     background-color: #000;
-    padding: 40px;
+    padding: 17px;
     text-align: center;
+}
+.Copy p{
+    color: white;
 }
