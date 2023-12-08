@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="Stilizimi.css">
 </head>
 <body>
-    <header class="headerC">
-        <img class="image" src="ne1813l003-news-logo-logotype-free-logo-icons.png" alt="logo">
-        <div class="titujt">
-            
-                <li class="titulli"><h3>Shendetesi</h3></li>
-                <li class="titulli"><h3>Ekonomi</h3></li>
-                <li class="titulli"><h3>Kulture</h3></li>
-                <li class="titulli"><h3>Sport</h3></li>
-        </div>
+    <header>
+        <nav>
+            <a href="#" class="logo">logo</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portofolio</a></li>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+
         <div class="search">
         <div class="icon"></div>
         <div class="input">
@@ -31,6 +35,20 @@
         }
     </script>
     </header>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+            $(window).scroll(function(){
+                if($(window).scrollTop()){
+                    $("nav").addClass("black");
+                }
+                else{
+                    $("nav").removeClass("black");
+                }
+            });
+
+
+
+    </script>
     <main>
         <div class="photoLajme">
             <div class="rubrika">
