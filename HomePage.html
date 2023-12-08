@@ -16,16 +16,20 @@
                 <li class="titulli"><h3>Kulture</h3></li>
                 <li class="titulli"><h3>Sport</h3></li>
         </div>
-        <div class="search-bar">
-
-        <div class="search"></div>
+        <div class="search">
         <div class="icon"></div>
         <div class="input">
-            <input type="text" placeholder="Search... " id="mysearch">
+            <input type="text" placeholder="Search" id="mysearch">
         </div>
-        <span class="clear" onclick="document.getElementById('mysearch')"></span>
-
-        </div>
+        <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span> 
+    </div>
+    <script>
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search');
+        icon.onclick = function(){
+            search.classList.toggle('active')
+        }
+    </script>
     </header>
     <main>
         <div class="photoLajme">
@@ -83,12 +87,6 @@
         </div>
         
     </footer>
-    <script>
-        const icon = document.querySelector('.icon');
-        const search = document.querySelector('.search');
-        icon.onclick = function(){
-            search.classList.toggle('active')
-        }
-    </script>
+    
 </body>
 </html>

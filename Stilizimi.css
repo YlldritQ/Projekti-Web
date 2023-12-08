@@ -3,20 +3,17 @@
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    padding: 15 15 px;
     background-color: black;
    border-bottom-width: 10px;
    border-bottom-style: groove;
    border-bottom-color: white;
-   border-radius: 1%;
+   border-radius: 2%;
 }
 
 .titujt{
  list-style: none;
  display: flex;
  justify-content: center;
-
-
 }
 
 .titulli{
@@ -24,8 +21,6 @@
     color: white;
     cursor: pointer;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    
-    
 }
 
 .titulli:hover{
@@ -40,29 +35,24 @@ color: black;
     padding-left: 2%;
     padding-bottom: 1.5%;
 }
- .search-bar{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
- }
  .search{
+    margin-right: 1%;
     position: relative;
-    width: 360%;
-    height: 60%;
+    width: 60px;
+    height: 60px;
     background: white;
-    border-radius: 50px;
+    border-radius: 60px;
     transition: 0.5s;
-    box-shadow: 0 0 0 5px blue;
+    box-shadow: 0 0 0 2px aqua;
     overflow: hidden;
  }
  .search.active{
-    width: 360px;
+    width: 350px;
  }
  .search .icon{
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 0;
+    left: 0;
     width: 60px;
     height: 60px;
     background-color: white;
@@ -78,8 +68,8 @@ color: black;
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 3px solid blue;
-    border-radius: 50;
+    border: 3px solid aqua;
+    border-radius: 50%;
     transform: translate(-4px,-4px) rotate(315deg);
  }
  .search .icon::after{
@@ -87,8 +77,7 @@ color: black;
     position: absolute;
     width: 3px;
     height: 12px;
-    background-color:blue;
-    border-radius: 50;
+    background-color:aqua;
     transform: translate(6px,6px) rotate(315deg);
  }
  .search .input{
@@ -101,13 +90,12 @@ color: black;
  }
  .search .input input{
     position: absolute;
-    top 0;
     width: 100%;
-    height: 100%;
+    height: 73%;
     border: none;
     outline: none;
-    font-size: 18px;
-    padding: 10px 0;
+    font-size: 20px;
+    padding: 10px ;
  }
  .clear{
     position: absolute;
@@ -122,20 +110,20 @@ color: black;
     justify-content: center;
     align-items: center;
  }
- .icon ::before{
-    position: relative;
+ .clear::before{
+    position:absolute;
     content: '';
     width: 1px;
     height: 15px;
-    background-color: antiquewhite;
-    transform: rotate(315deg);
+    background-color: aqua;
+    transform: rotate(45deg);
  }
- .icon ::before{
-    position: relative;
+ .clear::after{
+    position: absolute;
     content: '';
     width: 1px;
     height: 15px;
-    background-color: antiquewhite;
+    background-color: aqua;
     transform: rotate(315deg);
  }
 .photoLajme{
@@ -145,7 +133,6 @@ color: black;
     flex-wrap: wrap-reverse;
     justify-content: space-evenly;
     padding: 5px;
-    box-shadow: 0 0 0 5px blue;
 
 }
 .rubrika{
