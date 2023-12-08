@@ -1,56 +1,56 @@
-*{
-
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 body{
-
+font-family: sans-serif;
 }
 header{
-    margin: auto;
-    position: fixed;
-    display: flex;
+ width: 100%;
+ height: 100vh;
+ background: url(twitter-3-logo-png-transparent.png) no-repeat 50% 50%;
+ background-size: cover;
+ background-attachment: fixed;
+}
+main{
     width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    background-color: black;
-    transition: 0.6;
-    padding: 40px 15px;
-    z-index: 1000000;
-}
-header .logo{
-    position: relative;
-    color: #fff;
-    text-decoration: none;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    transition: 0.6s;
-}
-nav{
-    position: fixed;
-    width: ;
+    margin: 4em auto;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: justify;
 }
 
-header ul{
-     position: relative;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+nav{
+    position: fixed;
+    width: 100%;
 }
-header.black ul{
+
+nav ul{
+    list-style: none;
+    background: rgba(0,0,0,0);
+    overflow: hidden;
+    color: white;
+    padding: 0;
+    align-items: center;
+    margin: 0;
+    transition: 1s;
+}
+nav.black ul{
     background: #000;
 }
-header ul li{
-    position: relative;
-    list-style: none;
+nav ul li {
+    display: inline-block;
+    padding: 20px;
 }
-header ul li a{
-    position: relative;
-    padding: 0 15px;
+nav ul li a{
     text-decoration: none;
     color: #fff;
     letter-spacing: 2px;
-    font-size: larger;
+    font-size: 18px;
     transition: 0.6s;
+    font-family: sans-serif;
+    text-transform: uppercase;
 }
  .search{
     margin-right: 1%;
@@ -60,7 +60,7 @@ header ul li a{
     background: white;
     border-radius: 60px;
     transition: 0.5s;
-    box-shadow: 0 0 0 2px aqua;
+    box-shadow: 0 0 0 2px black;
     overflow: hidden;
  }
  .search.active{
@@ -85,7 +85,7 @@ header ul li a{
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 3px solid aqua;
+    border: 3px solid black;
     border-radius: 50%;
     transform: translate(-4px,-4px) rotate(315deg);
  }
@@ -94,7 +94,7 @@ header ul li a{
     position: absolute;
     width: 3px;
     height: 12px;
-    background-color:aqua;
+    background-color:black;
     transform: translate(6px,6px) rotate(315deg);
  }
  .search .input{
@@ -121,7 +121,7 @@ header ul li a{
     width: 15px;
     height: 15px;
     right: 15px;
-    background-color: lightyellow;  
+    background-color: white;  
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -132,7 +132,7 @@ header ul li a{
     content: '';
     width: 1px;
     height: 15px;
-    background-color: aqua;
+    background-color: black;
     transform: rotate(45deg);
  }
  .clear::after{
@@ -140,7 +140,7 @@ header ul li a{
     content: '';
     width: 1px;
     height: 15px;
-    background-color: aqua;
+    background-color: black;
     transform: rotate(315deg);
  }
 .photoLajme{

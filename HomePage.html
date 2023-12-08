@@ -9,7 +9,8 @@
 <body>
     <header>
         <nav>
-            <a href="#" class="logo">logo</a>
+            
+            <div class="menu">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About</a></li>
@@ -18,37 +19,22 @@
                 <li><a href="#">Team</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
-        </nav>
-
-        <div class="search">
+            </div>
+            <div class="search">
         <div class="icon"></div>
         <div class="input">
             <input type="text" placeholder="Search" id="mysearch">
         </div>
         <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span> 
-    </div>
-    <script>
-        const icon = document.querySelector('.icon');
-        const search = document.querySelector('.search');
-        icon.onclick = function(){
-            search.classList.toggle('active')
-        }
-    </script>
-    </header>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-            $(window).scroll(function(){
-                if($(window).scrollTop()){
-                    $("nav").addClass("black");
-                }
-                else{
-                    $("nav").removeClass("black");
-                }
-            });
+     </div>
+            
+    </nav>   
+ </header>
 
+    
 
-
-    </script>
+        
+    
     <main>
         <div class="photoLajme">
             <div class="rubrika">
@@ -105,6 +91,23 @@
         </div>
         
     </footer>
-    
+    <script>
+        const icon = document.querySelector('.icon');
+        const search = document.querySelector('.search');
+        icon.onclick = function(){
+            search.classList.toggle('active')
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+            $(window).scroll(function(){
+                if($(window).scrollTop()){
+                    $("nav").addClass("black");
+                }
+                else{
+                    $("nav").removeClass("black");
+                }
+            });
+    </script>
 </body>
 </html>
