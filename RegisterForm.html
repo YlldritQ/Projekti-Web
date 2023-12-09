@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="Stilizimi.css">
+</head>
+<body class="LogIn-Register">
+    <form onsubmit="event.preventDefault();">
+        <h1>Register</h1>
+        <input type="text" placeholder="Emri" id="emri" required>
+        <div class="error" id="emriError"></div>
+        <input type="text" placeholder="Mbiemri" id="mbiemri" required>
+        <div class="error" id="mbiemriError"></div>
+        <input type="text" placeholder="Username" id="username" required>
+        <div class="error" id="usernameError"></div>
+        <input type="email" placeholder="E-mail" id="email" required>
+        <div class="error" id="emailError"></div>
+        <input type="password" placeholder="Password" id="password" required>
+        <div class="error" id="passwordError"></div>
+        <input type="password" placeholder="Confirm Password" id="conPass" required>
+        <div class="error" id="conPasswordError"></div>
+        <button type="submit" onclick="validateRegister()">Submit</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
