@@ -1,34 +1,87 @@
-html,body{
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
+    font-family: 'Poppins', sans-serif;
 }
-body{
-font-family: sans-serif;
-}
-header{
- width: 100%;
- height: 100vh;
- background: url(twitter-3-logo-png-transparent.png) no-repeat 50% 50%;
- background-size: cover;
- background-attachment: fixed;
-}
-main{
-    width: 100%;
-    margin: 4em auto;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: justify;
+ /*  news cointainer css */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 10px;
+    margin: auto;
 }
 
-nav{
+.box {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    box-shadow: 7px 7px 25px 1px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.box img {
+    min-height: 200px;
+    background-color: red;
+}
+
+.box h4,
+.box div {
+    padding: 5px 10px;
+    margin: 0px;
+}
+
+.date {
+    display: flex;
+    align-items: center;
+    color: #938e8e;
+}
+
+.date p {
+    font-size: 13px;
+    margin: 0px;
+}
+.desc{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
+@media all and (min-width:700px) {
+    main {
+        padding: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .box h4,
+    .box div {
+        padding: 5px 15px;
+    }
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+    background: url(twitter-3-logo-png-transparent.png) no-repeat 50% 50%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+nav {
     position: fixed;
     width: 100%;
 }
 
-nav ul{
+nav ul {
     list-style: none;
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
     overflow: hidden;
     color: white;
     padding: 0;
@@ -36,14 +89,17 @@ nav ul{
     margin: 0;
     transition: 1s;
 }
-nav.black ul{
+
+nav.black ul {
     background: #000;
 }
+
 nav ul li {
     display: inline-block;
     padding: 20px;
 }
-nav ul li a{
+
+nav ul li a {
     text-decoration: none;
     color: #fff;
     letter-spacing: 2px;
@@ -52,7 +108,8 @@ nav ul li a{
     font-family: sans-serif;
     text-transform: uppercase;
 }
- .search{
+
+.search {
     margin-right: 1%;
     position: relative;
     width: 60px;
@@ -62,11 +119,13 @@ nav ul li a{
     transition: 0.5s;
     box-shadow: 0 0 0 2px black;
     overflow: hidden;
- }
- .search.active{
+}
+
+.search.active {
     width: 350px;
- }
- .search .icon{
+}
+
+.search .icon {
     position: absolute;
     top: 0;
     left: 0;
@@ -79,71 +138,79 @@ nav ul li a{
     align-items: center;
     z-index: 1000;
     cursor: pointer;
- }
- .search .icon::before{
+}
+
+.search .icon::before {
     content: '';
     position: absolute;
     width: 15px;
     height: 15px;
     border: 3px solid black;
     border-radius: 50%;
-    transform: translate(-4px,-4px) rotate(315deg);
- }
- .search .icon::after{
+    transform: translate(-4px, -4px) rotate(315deg);
+}
+
+.search .icon::after {
     content: '';
     position: absolute;
     width: 3px;
     height: 12px;
-    background-color:black;
-    transform: translate(6px,6px) rotate(315deg);
- }
- .search .input{
+    background-color: black;
+    transform: translate(6px, 6px) rotate(315deg);
+}
+
+.search .input {
     position: relative;
     width: 300px;
     height: 60px;
     left: 60px;
     display: flex;
     justify-content: center;
- }
- .search .input input{
+}
+
+.search .input input {
     position: absolute;
     width: 100%;
     height: 73%;
     border: none;
     outline: none;
     font-size: 20px;
-    padding: 10px ;
- }
- .clear{
+    padding: 10px;
+}
+
+.clear {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 15px;
     height: 15px;
     right: 15px;
-    background-color: white;  
+    background-color: white;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
- }
- .clear::before{
-    position:absolute;
+}
+
+.clear::before {
+    position: absolute;
     content: '';
     width: 1px;
     height: 15px;
     background-color: black;
     transform: rotate(45deg);
- }
- .clear::after{
+}
+
+.clear::after {
     position: absolute;
     content: '';
     width: 1px;
     height: 15px;
     background-color: black;
     transform: rotate(315deg);
- }
-.photoLajme{
+}
+
+.photoLajme {
     display: flex;
     margin: 0 2%;
     flex-direction: row;
@@ -152,7 +219,8 @@ nav ul li a{
     padding: 5px;
 
 }
-.rubrika{
+
+.rubrika {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -162,64 +230,70 @@ nav ul li a{
     height: 280px;
 
 }
-.Pershkrimi{
+
+.Pershkrimi {
     display: flex;
     flex-direction: column;
     width: 450px;
 }
-.rubrika>img{
+
+.rubrika>img {
     width: 450px;
     height: 250px;
     object-fit: cover;
 
 }
-main{
-    background-color: aqua;
-}
-.footerC{
+
+.footerC {
     background-color: #111;
-   padding-bottom:0.5%;
-   padding-top: 0.5%;
-   border-top-width: 10px;
-   border-top-style: groove;
-   border-top-color: white;
-   border-radius: 3%;
-   color: white;
-   
- 
+    padding-bottom: 0.5%;
+    padding-top: 0.5%;
+    border-top-width: 10px;
+    border-top-style: groove;
+    border-top-color: white;
+    border-radius: 3%;
+    color: white;
+
+
 }
-.logot{
+
+.logot {
     display: flex;
     justify-content: center;
     padding-top: 2%;
     justify-content: space-around;
-    
+
 }
-.referencat{
-font-size: larger;
-display: flex;
-padding: 20px 20px;
-justify-content: center;
-list-style: none;
-justify-content: space-between;
-color: white;
+
+.referencat {
+    font-size: larger;
+    display: flex;
+    padding: 20px 20px;
+    justify-content: center;
+    list-style: none;
+    justify-content: space-between;
+    color: white;
 
 
 }
-.referenca a{
+
+.referenca a {
     text-decoration: none;
     color: white;
     opacity: 0.7;
     transition: 0.4s;
 }
-.referenca a:hover{
+
+.referenca a:hover {
     opacity: 1.5;
 }
-.Copy{
+
+.Copy {
     background-color: #000;
     padding: 17px;
     text-align: center;
 }
-.Copy p{
+
+.Copy p {
     color: white;
 }
