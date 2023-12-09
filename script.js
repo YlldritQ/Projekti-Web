@@ -84,3 +84,4 @@ function validateLogIn(){
     alert('Success');
     openLink("HomePage.html");
 }
+

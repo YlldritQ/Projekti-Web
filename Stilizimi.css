@@ -21,6 +21,7 @@ main {
     box-shadow: 7px 7px 25px 1px rgba(0, 0, 0, 0.6);
     border-radius: 5px;
     overflow: hidden;
+    cursor: pointer;
 }
 
 .box img {
@@ -47,7 +48,7 @@ main {
 .desc{
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     margin: 0;
 }
