@@ -18,26 +18,41 @@
 <body>
     <header>
         <nav>
-            <div class="search">
-                <div class="icon"></div>
-                <div class="input">
-                    <input type="text" placeholder="Search" id="mysearch">
-                </div>
-                <span class="clear" onclick="document.getElementById('mysearch').value = ''"></span>
-            </div>
-            <div class="menu">
+            <ul class="sidebar">
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="#">lajme</a></li>
+                <li><a href="#">kronikë</a></li>
+                <li><a href="#">shëndetësi</a></li>
+                <li><a href="#">ekonomi</a></li>
+                <li><a href="#">kulture</a></li>
+                <li><a href="#">sport</a></li>
+                <li><a href="#">Sign In</a></li>
+                <li><a href="#">Sign Up</a></li>
+            </ul>
                 <ul>
-                    <li><a href="#">lajme</a></li>
-                    <li><a href="#">Kronikë</a></li>
-                    <li><a href="#">Shëndetësi</a></li>
-                    <li><a href="#">ekonomi</a></li>
-                    <li><a href="#">kulture</a></li>
-                    <li><a href="#">sport</a></li>
-                    <li><a href="#">Sign In</a></li>
-                    <li><a href="#">Sign Up</a></li>
+                    <li class="largo"><a href=""><strong>Ylldrit & Leutrim</strong></a></li>
+                    <li class="hideOnMobile"><a href="#">lajme</a></li>
+                    <li class="hideOnMobile"><a href="#">kronikë</a></li>
+                    <li class="hideOnMobile"><a href="#">shëndetësi</a></li>
+                    <li class="hideOnMobile"><a href="#">ekonomi</a></li>
+                    <li class="hideOnMobile"><a href="#">kulture</a></li>
+                    <li class="hideOnMobile"><a href="#">sport</a></li>
+                    <li class="hideOnMobile"><a href="#">Sign In</a></li>
+                    <li class="hideOnMobile"><a href="#">Sign Up</a></li>
+                    <li class="butoni"   onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
                 </ul>
-            </div>
         </nav>
+        <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display  = 'flex'
+        }
+        function hideSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display  = 'none'
+        }
+        </script>
+        
     </header>
 
     <main>
@@ -166,26 +181,8 @@
         <div class="Copy">
             <p>Copyright ©2023; Designed by <strong>Leutrim & Ylldrit</strong> </p>
         </div>
+        
     </footer>
-    <script>
-        const icon = document.querySelector('.icon');
-        const search = document.querySelector('.search');
-        icon.onclick = function () {
-            search.classList.toggle('active')
-        }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script>
-        $(window).scroll(function () {
-            if ($(window).scrollTop()) {
-                $("nav").addClass("black");
-            }
-            else {
-                $("nav").removeClass("black");
-            }
-        });
-    </script>
-    <script src="script.js"></script>
 </body>
 
 </html>
