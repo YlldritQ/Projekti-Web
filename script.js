@@ -1,3 +1,6 @@
+
+// Register Validation
+
 function validateRegister() {
     let emriInput = document.getElementById('emri');
     let emriError = document.getElementById('emriError');
@@ -56,9 +59,13 @@ function validateRegister() {
     openLink("LogInForm.html");
 }
 
+// Functin to open likns
+
 function openLink(referen){
     window.location.href = referen;
 }
+
+// Log in validation
 
 function validateLogIn(){
     let usernameInput = document.getElementById('username');
@@ -84,4 +91,5 @@ function validateLogIn(){
     alert('Success');
     openLink("HomePage.html");
 }
+
 
