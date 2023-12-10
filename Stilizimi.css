@@ -16,7 +16,6 @@ main {
     flex-direction: column;
     gap: 25px;
     padding: 10px;
-    margin: auto;
 }
 
 .box {
@@ -46,7 +45,7 @@ main {
 .date {
     display: flex;
     align-items: center;
-    color: #938e8e;
+    color: #292828;
 }
 
 .date p {
