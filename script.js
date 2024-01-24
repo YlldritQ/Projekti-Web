@@ -56,7 +56,7 @@ function validateRegister() {
     }
 
     alert('Success');
-    openLink("LogInForm.html");
+    openLink("LogInForm.php");
 }
 
 // Functin to open likns
@@ -89,7 +89,7 @@ function validateLogIn(){
     }
 
     alert('Success');
-    openLink("HomePage.html");
+    openLink("HomePage.php");
 }
 
 
