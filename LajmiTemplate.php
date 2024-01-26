@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newsId'])) {
 }
 
 
-//if (isset($_SESSION['newsId'])) {
+if (isset($_SESSION['newsId'])) {
     $lajmiRepo = new LajmiRepository();
 
     $lajmi = $lajmiRepo->getLajmetById($_SESSION['newsId']);
@@ -20,7 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newsId'])) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>“Super aplikacioni” – platforma për të menaxhuar gjithçka në internetin e Rusisë
+        <title>
+            ' . $lajmi['Titulli'] . '
         </title>
         <link rel="stylesheet" href="Stilizimi.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -71,7 +72,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newsId'])) {
     
     </html>
     ';
-//} else {
-  //  echo "<script> alert('Error!'); </script>";
-    //header('Location: index.php');
+} else {
+    echo "<script> alert('Error!'); </script>";
+    header('Location: index.php');
+}
 ?>

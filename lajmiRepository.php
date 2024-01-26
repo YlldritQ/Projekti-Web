@@ -21,12 +21,13 @@ class LajmiRepository{
         $desc = $lajmi->getDescription();
         $permbajtja = $lajmi->getPermbajtja();
         $videoLink = $lajmi->getVideoLink();
+        $kategoria = $lajmi->getKategoria();
 
-        $sql = "INSERT INTO lajmet (ID,Titulli,Img_Link,Data,Description,Permbajtja,Video_Link) VALUES (?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO lajmet (ID,Titulli,Img_Link,Data,Description,Permbajtja,Video_Link, Kategoria) VALUES (?,?,?,?,?,?,?,?)";
 
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$id,$titulli,$imgLink,$data,$desc,$permbajtja,$videoLink]);
+        $statement->execute([$id,$titulli,$imgLink,$data,$desc,$permbajtja,$videoLink, $kategoria]);
 
         echo "<script> alert('Lajmi u shtua me sukses!'); </script>";
 
@@ -54,14 +55,14 @@ class LajmiRepository{
         return $user;
     }
 
-    function updateLajmi($id,$titulli,$imgLink,$data,$desc,$permbajtja,$videoLink){
+    function updateLajmi($id,$titulli,$imgLink,$data,$desc,$permbajtja,$videoLink, $kategoria){
          $conn = $this->connection;
 
-         $sql = "UPDATE user SET Titulli=?, Img_Link=?, Data=?,Description=?, Permbajtja=?, Video_Link=? WHERE ID=?";
+         $sql = "UPDATE lajmet SET Titulli=?, Img_Link=?, Data=?,Description=?, Permbajtja=?, Video_Link=?, Kategoria=? WHERE ID=?";
 
          $statement = $conn->prepare($sql);
 
-         $statement->execute([$titulli,$imgLink,strtotime($data),$desc,$permbajtja,$videoLink,$id]);
+         $statement->execute([$titulli,$imgLink,strtotime($data),$desc,$permbajtja,$videoLink,$id, $kategoria]);
 
          echo "<script>alert('update was successful'); </script>";
     } 

@@ -8,9 +8,10 @@ class Lajmi{
     private $description;
     private $permbajtja;
     private $videoLink;
+    private $kategoria;
 
 
-    function __construct($id,$titulli,$imgLink,$data,$description,$permbajtja,$videoLink){
+    function __construct($id,$titulli,$imgLink,$data,$description,$permbajtja,$videoLink, $kategoria){
             $this->id = $id;
             $this->titulli = $titulli;
             $this->imgLink = $imgLink;
@@ -18,6 +19,7 @@ class Lajmi{
             $this->description = $description;
             $this->permbajtja = $permbajtja;
             $this->videoLink = $videoLink;
+            $this->kategoria = $kategoria;
     }
 
 
@@ -41,6 +43,9 @@ class Lajmi{
     }
     function getVideoLink(){
         return $this->videoLink;
+    }
+    function getKategoria(){
+        return $this->kategoria;
     }
 }
 
