@@ -106,17 +106,7 @@
                 të provojnë lëvizjen revolucionare.
             </div>
         </div>
-        <div class="box" onclick="openLink('Lajmi28.html')">
-            <img src="foto28.png" />
-            <h4>
-                Ushtrimet e rregullta ndikojnë që të bëni gjumë më të mirë
-                <div class="date">
-                    <p>10-12-2023</p>
-                </div>
-                <div class="desc">
-                    Ushtrimet e rregullta kanë shumë përfitime, duke përfshirë këtu edhe gjumin e mirë.
-                </div>
-        </div>
+       
     </main>
     <footer>
         <div class="FooterC">
