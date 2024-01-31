@@ -20,7 +20,7 @@
         <nav>
             <ul class="sidebar">
                 <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-                <li onclick="openLink('HomePage.php')"><a href="#">lajme</a></li>
+                <li onclick="openLink('index.php')"><a href="#">lajme</a></li>
                 <li onclick="openLink('kronike.php')"><a href="#">kronikë</a></li>
                 <li onclick="openLink('shendetesi.php')"><a href="#">shëndetësi</a></li>
                 <li onclick="openLink('ekonomi.php')"><a href="#">ekonomi</a></li>
@@ -29,8 +29,8 @@
                 <li onclick="openLink('LogInForm.php')"><a href="#">Sign In</a></li>
             </ul>
                 <ul>
-                    <li class="largo"><a href="HomePage.php"><strong>Ylldrit & Leutrim</strong></a></li>
-                    <li class="hideOnMobile" onclick="openLink('HomePage.php')"><a href="#">lajme</a></li>
+                    <li class="largo"><a href="index.php"><strong>Ylldrit & Leutrim</strong></a></li>
+                    <li class="hideOnMobile" onclick="openLink('index.php')"><a href="#">lajme</a></li>
                     <li class="hideOnMobile" onclick="openLink('kronike.php')"><a href="#">kronikë</a></li>
                     <li class="hideOnMobile" onclick="openLink('shendetesi.php')"><a href="#">shëndetësi</a></li>
                     <li class="hideOnMobile" onclick="openLink('ekonomi.php')"><a href="#">ekonomi</a></li>
