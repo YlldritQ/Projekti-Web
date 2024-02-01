@@ -424,3 +424,30 @@ span{
     background: #f0f0f0;
     color: #111;
 }
+   #back-to-top-btn {
+      position: fixed;
+      bottom: -50px; 
+      right: 10px;
+      background-color: #fff;
+      color: #000
+      border: none;
+      border-radius: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 17px;
+      transition: bottom 0.9s ease;
+    }
+
+    #back-to-top-btn:hover {
+      background-color:#000;
+      color: #fff;
+    }
+
+    @keyframes slideIn {
+      from {
+        bottom: -50px;
+      }
+      to {
+        bottom: 20px;
+      }
+    }

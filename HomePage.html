@@ -56,6 +56,30 @@
     </header>
 
     <main>
+        <button class="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
+        <script>
+  
+            var mybutton = document.getElementById("back-to-top-btn");
+        
+            window.onscroll = function() {
+              scrollFunction();
+            };
+        
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.animation = "slideIn 0.3s forwards"; // play the slideIn animation
+              } else {
+                mybutton.style.animation = ""; // reset the animation when not needed
+              }
+            }
+        
+            function scrollToTop() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+          </script>
+
+
         <div class="box" onclick="openLink('Lajmi1.html')">
             <img src="foto1.png" />
             <h4>Naim Murseli përballet me babanë për herë të parë pas arrestimit, akuzon Policinë për keqtrajtim</h4>
