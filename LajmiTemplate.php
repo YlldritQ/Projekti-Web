@@ -2,15 +2,10 @@
 include_once 'lajmiRepository.php';
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['newsId'])) {
-    $_SESSION['newsId'] = $_POST['newsId'];
-}
-
-
-if (isset($_SESSION['newsId'])) {
+if (isset($_POST['newsId'])) {
     $lajmiRepo = new LajmiRepository();
 
-    $lajmi = $lajmiRepo->getLajmetById($_SESSION['newsId']);
+    $lajmi = $lajmiRepo->getLajmetById($_POST['newsId']);
 
     echo
     '

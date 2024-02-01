@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,8 +12,7 @@
     <!-- Font import from google font library  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="Stilizimi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -17,9 +20,11 @@
 
 <body>
     <header>
-        <nav>   
+        <nav>
             <ul class="sidebar">
-                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                            <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg></a></li>
                 <li onclick="openLink('index.php')"><a href="#">lajme</a></li>
                 <li onclick="openLink('kronike.php')"><a href="#">kronikë</a></li>
                 <li onclick="openLink('shendetesi.php')"><a href="#">shëndetësi</a></li>
@@ -27,139 +32,88 @@
                 <li onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
                 <li onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <li onclick="openLink('LogInForm.php')"><a href="#">Sign In</a></li>
-                <li onclick="openLink('RegisterForm.php')"><a href="#">Sign Up</a></li>
             </ul>
-                <ul>
-                    <li class="largo"><a href="index.php"><strong>Ylldrit & Leutrim</strong></a></li>
-                    <li class="hideOnMobile" onclick="openLink('index.php')"><a href="#">lajme</a></li>
-                    <li class="hideOnMobile" onclick="openLink('kronike.php')"><a href="#">kronikë</a></li>
-                    <li class="hideOnMobile" onclick="openLink('shendetesi.php')"><a href="#">shëndetësi</a></li>
-                    <li class="hideOnMobile" onclick="openLink('ekonomi.php')"><a href="#">ekonomi</a></li>
-                    <li class="hideOnMobile" onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
-                    <li class="hideOnMobile" onclick="openLink('sport.php')"><a href="#">sport</a></li>
-                    <li class="hideOnMobile" onclick="openLink('LogInForm.php')"><a href="#">Sign In</a></li>
-                    <li class="hideOnMobile" onclick="openLink('RegisterForm.php')"><a href="#">Sign Up</a></li>
-                    <li class="butoni" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-                </ul>
+            <ul>
+                <li class="largo"><a href="index.php"><strong>Ylldrit & Leutrim</strong></a></li>
+                <li class="hideOnMobile" onclick="openLink('index.php')"><a href="#">lajme</a></li>
+                <li class="hideOnMobile" onclick="openLink('kronike.php')"><a href="#">kronikë</a></li>
+                <li class="hideOnMobile" onclick="openLink('shendetesi.php')"><a href="#">shëndetësi</a></li>
+                <li class="hideOnMobile" onclick="openLink('ekonomi.php')"><a href="#">ekonomi</a></li>
+                <li class="hideOnMobile" onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
+                <li class="hideOnMobile" onclick="openLink('sport.php')"><a href="#">sport</a></li>
+                <li class="hideOnMobile" onclick="openLink('LogInForm.php')"><a href="#">Sign In</a></li>
+                <li class="butoni" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg></a></li>
+            </ul>
         </nav>
         <script>
-        function showSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-                sidebar.style.display  = 'flex'
-        }
-        function hideSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-                sidebar.style.display  = 'none'
-        }
+            function showSidebar() {
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+
+            function hideSidebar() {
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
         </script>
-        <script src="script.js" ></script>
+        <script src="script.js"></script>
     </header>
 
     <main>
-        <div class="box" onclick="openLink('Lajmi2.html')">
-            <img src="foto2.png" />
-            <h4>A e dini se stina e dimrit dëmton baterinë e celularit tuaj? Arsyet do t’iu befasojnë</h4>
-            <div class="date">
-                <p>07-12-2023</p>
-            </div>
-            <div class="desc">
-                Gjithçka që bëjnë telefonat tanë, është me të vërtetë e mrekullueshme.
-                Por ka një gjë që nuk e bëjnë dot mirë: t’i rezistojnë motit të ftohtë.
-            </div>
-        </div>
-        <div class="box" onclick="openLink('Lajmi6.html')">
-            <img src="foto6.png" />
-            <h4>Dyshohet se keqpërdorën ujin e ujësjellësit, fabrika ‘Spirit of Drini’ procedohet në Prokurori</h4>
-            <div class="date">
-                <p>10-12-2023</p>
-            </div>
-            <div class="desc">
-                Fabrika për prodhimin e ujit, ‘Spirit of Drini’, është proceduar në Prokurorinë Themelore në Pejë, pasi
-                u
-                denoncua publikisht se ka keqpërdorur ujin ilegalisht, raporton Gazeta Sinjali.
-            </div>
-        </div>
-        <div class="box" onclick="openLink('Lajmi7.html')">
-            <img src="foto7.png" />
-            <h4>Facebook dhe Messenger do të kodojnë mesazhet automatikisht</h4>
-            <div class="date">
-                <p>10-12-2023</p>
-            </div>
-            <div class="desc">
-                Të gjitha bisedat në Facebook dhe Messenger do të kodohen automatikisht,
-                ka njoftuar kompania mëmë Meta.
-            </div>
-        </div>
+        <?php
+        include_once 'lajmiRepository.php';
+        include_once 'lajmi.php';
 
-        <div class="box" onclick="openLink('Lajmi16.html')">
-            <img src="foto16.png" />
-            <h4>
-                Diaspora dërgoi mbi 1 miliard euro remitanca deri në shtator 2023
-            </h4>
-            <div class="date">
-                <p>10-12-2023</p>
-            </div>
-            <div class="desc">
-                Sipas statistikave të Bankës Qendrore të Kosovës (BQK), në periudhën deri në shtator të këtij viti, mbi
-                1 miliard euro janë dërguar
-                në Kosovë. Kjo vlerë përbën rritje prej 11.5 për qind krahasuar me vitin paraprak.
-            </div>
-        </div>
-        <div class="box" onclick="openLink('Lajmi17.html')">
-            <img src="foto17.png" />
-            <h4>
-                “Shfrytëzoni kartelat bankare”, kërkohet nga qytetarët të shmangin përdorimin e 2 eurove
-            </h4>
-            <div class="date">
-                <p>10-12-2023</p>
-            </div>
-            <div class="desc">
-                Banka Qendrore e Republikës së Kosovës, në bashkërendim me Policinë e Kosovës, Agjencinë e Kosovës për
-                Forenzikë, Doganat e Kosovës, Administratën Tatimore të Kosovës, Njësinë e Inteligjencës Financiare,
-                Inspektoratin e Tregut dhe Agjencinë e Kosovës për Inteligjencë kanë mbajtur sot një takim lidhur
-                me intensifikimin e veprimeve institucionale për luftimin e parave të falsifikuara që po qarkullojnë në
-                Kosovë.
-            </div>
-        </div>
-        <div class="box" onclick="openLink('Lajmi24.html')">
-            <img src="foto24.png" />
-            <h4>
-                “Super aplikacioni” – platforma për të menaxhuar gjithçka në internetin e Rusisë
-            </h4>
-            <div class="date">
-                <p>10-12-2023</p>
-            </div>
-            <div class="desc">
-                Do të mund t’i paguani taksat. Do të mund të shpërndani, pëlqeni, të ndërhyni në video. Do të mund të
-                regjistroni fëmijën tuaj në kopsht. Do të mund t’iu dërgoni mesazhe miqve, të paguani gjobën e trafikut,
-                të lëshoni muzikë, të gjeni një partner biznesi, romantik, dhe më shumë – dhe do të mund të thirreni për
-                të luftuar në Ukrainë.
-            </div>
-        </div>
+        $lajmiRepo = new LajmiRepository();
+
+        $lajmi  = $lajmiRepo->getLajmetByKategoria('Ekonomi');
+
+
+        foreach ($lajmi as $lajmet) {
+            echo "
+            <div class=\"box\" onclick=\"openNews('LajmiTemplate.php', {$lajmet[0]})\">
+                    <img src=\"" . $lajmet['Img_Link'] . "\" />
+                    <h4>" . $lajmet['Titulli'] . "</h4>
+                    <div class=\"date\">
+                        <p>" . $lajmet['Data'] . "</p>
+                    </div>
+                    <div class=\"desc\">
+                        " . $lajmet['Description'] . "
+                    </div>
+                </div>
+            ";
+        }
+
+        
+        ?>
+
     </main>
     <footer>
         <div class="FooterC">
-        <div class="logot">
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-youtube"></i></a>
-        </div>
-        <div class="referencat">
-            <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">news</a></li>
-            <li onclick="openLink('about us.html')"><a href="#">about us</a></li>
-            <li><a href="#">contact us</a></li>
-            <li><a href="#">our team</a></li>
-        </ul>
-        </div>
+            <div class="logot">
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="referencat">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">news</a></li>
+                    <li onclick="openLink('about us.html')"><a href="#">about us</a></li>
+                    <li><a href="#">contact us</a></li>
+                    <li><a href="#">our team</a></li>
+                </ul>
+            </div>
         </div>
         <div class="Copy">
             <p>Copyright ©2023; Designed by <strong>Leutrim & Ylldrit</strong> </p>
         </div>
-        <script src="script.js" ></script>
+        <script src="script.js"></script>
     </footer>
 </body>
-<script src="script.js" ></script>
+<script src="script.js"></script>
+
 </html>

@@ -7,15 +7,17 @@ class User{
     private $email;
     private $username;
     private $password;
+    private $isAdmin;
 
 
-    function __construct($id,$name,$surname,$email,$username,$password){
+    function __construct($id,$name,$surname,$email,$username,$password, $isAdmin){
             $this->id = $id;
             $this->name = $name;
             $this->surname = $surname;
             $this->email = $email;
             $this->username = $username;
             $this->password = $password;
+            $this->isAdmin = $isAdmin;
     }
 
 
@@ -36,6 +38,9 @@ class User{
     }
     function getPassword(){
         return $this->password;
+    }
+    function getIsAdmin(){
+        return $this->isAdmin;
     }
 }
 

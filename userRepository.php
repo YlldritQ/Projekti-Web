@@ -1,5 +1,6 @@
 <?php 
 include_once 'databaseConnection.php';
+include_once 'user.php';
 
 class UserRepository{
     private $connection;
@@ -21,7 +22,7 @@ class UserRepository{
         $username = $user->getUsername();
         $password = $user->getPassword();
 
-        $sql = "INSERT INTO user (id,name,surname,email,username,password) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO user (ID,name,surname,email,username,password) VALUES (?,?,?,?,?,?)";
 
         $statement = $conn->prepare($sql);
 
@@ -45,7 +46,7 @@ class UserRepository{
     function getUserById($id){
         $conn = $this->connection;
 
-        $sql = "SELECT * FROM user WHERE id='$id'";
+        $sql = "SELECT * FROM user WHERE ID='$id'";
 
         $statement = $conn->query($sql);
         $user = $statement->fetch();
@@ -56,7 +57,7 @@ class UserRepository{
     function updateUser($id,$name,$surname,$email,$username,$password){
          $conn = $this->connection;
 
-         $sql = "UPDATE user SET name=?, surname=?, email=?, username=?, password=? WHERE id=?";
+         $sql = "UPDATE user SET name=?, surname=?, email=?, username=?, password=? WHERE ID=?";
 
          $statement = $conn->prepare($sql);
 
@@ -68,14 +69,26 @@ class UserRepository{
     function deleteUser($id){
         $conn = $this->connection;
 
-        $sql = "DELETE FROM user WHERE id=?";
+        $sql = "DELETE FROM user WHERE ID=?";
 
         $statement = $conn->prepare($sql);
 
         $statement->execute([$id]);
 
         echo "<script>alert('delete was successful'); </script>";
-   } 
+   }
+   
+   function adminDistribution($id, $isAdmin){
+    $conn = $this->connection;
+
+    $sql = "UPDATE user SET IsAdmin=? WHERE ID=?";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute([$isAdmin, $id]);
+
+    echo "<script>alert('update was successful'); </script>";
+   }
 }
 
 ?>

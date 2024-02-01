@@ -1,39 +1,44 @@
-<?php 
+<?php
 include_once 'databaseConnection.php';
+include_once 'lajmi.php';
 
-class LajmiRepository{
+class LajmiRepository
+{
     private $connection;
 
-    function __construct(){
+    function __construct()
+    {
         $conn = new DatabaseConenction;
         $this->connection = $conn->startConnection();
     }
 
 
-    function insertLajmi($lajmi){
+    function insertLajmi($lajmi)
+    {
 
         $conn = $this->connection;
 
         $id = $lajmi->getId();
         $titulli = $lajmi->getTitulli();
         $imgLink = $lajmi->getImgLink();
-        $data = strtotime($lajmi->getData());
+        $data = $lajmi->getData();
         $desc = $lajmi->getDescription();
         $permbajtja = $lajmi->getPermbajtja();
         $videoLink = $lajmi->getVideoLink();
         $kategoria = $lajmi->getKategoria();
+        $userId = $lajmi->getUserId();
 
-        $sql = "INSERT INTO lajmet (ID,Titulli,Img_Link,Data,Description,Permbajtja,Video_Link, Kategoria) VALUES (?,?,?,?,?,?,?,?)";
+        $sql = "INSERT INTO lajmet (ID,Titulli,Img_Link,Data,Description,Permbajtja,Video_Link, Kategoria, UserID) VALUES (?,?,?,?,?,?,?,?,?)";
 
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$id,$titulli,$imgLink,$data,$desc,$permbajtja,$videoLink, $kategoria]);
+        $statement->execute([$id, $titulli, $imgLink, $data, $desc, $permbajtja, $videoLink, $kategoria , $userId]);
 
         echo "<script> alert('Lajmi u shtua me sukses!'); </script>";
-
     }
 
-    function getAllLajmet(){
+    function getAllLajmet()
+    {
         $conn = $this->connection;
 
         $sql = "SELECT * FROM lajmet";
@@ -44,30 +49,45 @@ class LajmiRepository{
         return $users;
     }
 
-    function getLajmetById($id){
+    function getLajmetById($id)
+    {
         $conn = $this->connection;
 
         $sql = "SELECT * FROM lajmet WHERE ID='$id'";
 
         $statement = $conn->query($sql);
-        $user = $statement->fetch();
+        $lajmet = $statement->fetch();
 
-        return $user;
+        return $lajmet;
     }
 
-    function updateLajmi($id,$titulli,$imgLink,$data,$desc,$permbajtja,$videoLink, $kategoria){
-         $conn = $this->connection;
+    function getLajmetByKategoria($kategoria)
+    {
+        $conn = $this->connection;
 
-         $sql = "UPDATE lajmet SET Titulli=?, Img_Link=?, Data=?,Description=?, Permbajtja=?, Video_Link=?, Kategoria=? WHERE ID=?";
+        $sql = "SELECT * FROM lajmet WHERE Kategoria='$kategoria'";
 
-         $statement = $conn->prepare($sql);
+        $statement = $conn->query($sql);
+        $lajmet = $statement->fetchAll();
 
-         $statement->execute([$titulli,$imgLink,strtotime($data),$desc,$permbajtja,$videoLink,$id, $kategoria]);
+        return $lajmet;
+    }
 
-         echo "<script>alert('update was successful'); </script>";
-    } 
+    function updateLajmi($id, $titulli, $imgLink, $data, $desc, $permbajtja, $videoLink, $kategoria, $user)
+    {
+        $conn = $this->connection;
 
-    function deleteLajmi($id){
+        $sql = "UPDATE lajmet SET Titulli=?, Img_Link=?, Data=?,Description=?, Permbajtja=?, Video_Link=?, Kategoria=? , UserID=? WHERE ID=?";
+
+        $statement = $conn->prepare($sql);
+
+        $statement->execute([$titulli, $imgLink, strtotime($data), $desc, $permbajtja, $videoLink, $id, $kategoria, $user]);
+
+        echo "<script>alert('update was successful'); </script>";
+    }
+
+    function deleteLajmi($id)
+    {
         $conn = $this->connection;
 
         $sql = "DELETE FROM lajmet WHERE ID=?";
@@ -77,6 +97,5 @@ class LajmiRepository{
         $statement->execute([$id]);
 
         echo "<script>alert('delete was successful'); </script>";
-   } 
+    }
 }
-?>
