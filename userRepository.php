@@ -15,18 +15,17 @@ class UserRepository{
 
         $conn = $this->connection;
 
-        $id = $user->getId();
         $name = $user->getName();
         $surname = $user->getSurname();
         $email = $user->getEmail();
         $username = $user->getUsername();
         $password = $user->getPassword();
 
-        $sql = "INSERT INTO user (ID,name,surname,email,username,password) VALUES (?,?,?,?,?,?)";
+        $sql = "INSERT INTO user (name,surname,email,username,password) VALUES (?,?,?,?,?)";
 
         $statement = $conn->prepare($sql);
 
-        $statement->execute([$id,$name,$surname,$email,$username,$password]);
+        $statement->execute([$name,$surname,$email,$username,$password]);
 
         echo "<script> alert('User has been inserted successfuly!'); </script>";
 
