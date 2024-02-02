@@ -199,7 +199,7 @@ nav {
     
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 5px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
    
@@ -263,7 +263,7 @@ nav :first-child{
 .butoni{
     display: none;
 }
-@media(max-width: 2025px){
+@media(max-width: 1800px){
     .hideOnMobile{
         display: none;
     }
@@ -436,7 +436,8 @@ span{
       cursor: pointer;
       font-size: 17px;
       transition: bottom 0.9s ease;
-    }
+      
+   }
 
     #back-to-top-btn:hover {
       background-color:#000;
@@ -450,4 +451,20 @@ span{
       to {
         bottom: 20px;
       }
+    }
+
+    .slider-container {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        max-height: 400px;
+    }
+
+    .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+        min-width: 100%;
     }

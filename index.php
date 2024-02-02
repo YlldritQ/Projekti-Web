@@ -73,6 +73,64 @@ session_start();
     </header>
 
     <main>
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide"><img src="" alt="foto"></div>
+            <div class="slide"><img src="" alt="foto"></div>
+            <div class="slide"><img src="" alt="foto"></div>
+            
+        </div>
+    </div>
+
+
+
+    <script>
+    const slider = document.querySelector('.slider');
+    let currentIndex = 0;
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slider.children.length;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
+        updateSlider();
+    }
+
+    function updateSlider() {
+        const translateValue = -currentIndex * 100 + '%';
+        slider.style.transform = 'translateX(' + translateValue + ')';
+    }
+
+     //setInterval(nextSlide, 3000);
+</script>
+
+
+
+    <button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
+        <script>
+  
+            var mybutton = document.getElementById("back-to-top-btn");
+        
+            window.onscroll = function() {
+              scrollFunction();
+            };
+        
+            function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.animation = "slideIn 0.3s forwards"; 
+              } else {
+                mybutton.style.animation = ""; 
+              }
+            }
+        
+            function scrollToTop() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }
+          </script>
         <?php
         include_once 'lajmiRepository.php';
         include_once 'lajmi.php';
