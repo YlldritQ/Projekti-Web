@@ -13,6 +13,7 @@ if(isset($_POST["LgInSubmit"])){
         if($user["password"] == $password){
             $_SESSION['isAdmin'] = $user["IsAdmin"];
             $_SESSION['ID'] = $user["ID"];
+            $_SESSION['Username'] = $user["username"];
             echo "<script>alert('Log in u krye me sukses!'); window.location.href='index.php';</script>";
         }else{
             echo "<script>alert('Passwordi eshte gabim!');</script>";

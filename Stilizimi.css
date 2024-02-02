@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
+
 body {
     min-height: 100vh;
     background-image: url(global-technology-background-with-text-space_1017-19388.avif);
@@ -10,7 +11,8 @@ body {
     background-size: cover;
     font-family: 'Poppins', sans-serif;
 }
- /*  news cointainer css */
+
+/*  news cointainer css */
 main {
     display: flex;
     flex-direction: column;
@@ -28,9 +30,10 @@ main {
     cursor: pointer;
 }
 
-.box:hover{
+.box:hover {
     box-shadow: 15px 15px 40px 5px rgba(0, 0, 0, 0.6);
 }
+
 .box img {
     min-height: 200px;
     background-color: red;
@@ -52,7 +55,8 @@ main {
     font-size: 13px;
     margin: 0px;
 }
-.desc{
+
+.desc {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -77,7 +81,7 @@ main {
 /* LogIn/register css */
 
 
-.LogIn-Register{
+.LogIn-Register {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -85,11 +89,13 @@ main {
     background: url('login.jpg');
     background-size: cover;
 }
-.LogIn-Register form{
+
+.LogIn-Register form {
     margin-top: 50px;
     text-align: center;
 }
-.LogIn-Register input{
+
+.LogIn-Register input {
     display: block;
     width: 350px;
     height: 40px;
@@ -100,22 +106,25 @@ main {
     font-size: 20px;
     background: transparent;
 }
-.LogIn-Register button{
+
+.LogIn-Register button {
     width: 250px;
     height: 40px;
     border-radius: 20px;
     font-size: 20px;
     background-color: rgb(114, 203, 233);
     border: none;
-    color: white;    
+    color: white;
     margin-top: 30px;
     cursor: pointer;
 }
-.forgot{
+
+.forgot {
     display: flex;
     justify-content: end;
 }
-.forgot p{
+
+.forgot p {
     margin-right: 20px;
     margin-top: 0;
     margin-bottom: 0;
@@ -123,13 +132,16 @@ main {
     padding: 0;
     cursor: pointer;
 }
-.forgot p:hover{
+
+.forgot p:hover {
     color: darkblue;
 }
-.LogIn-Register button:hover{
+
+.LogIn-Register button:hover {
     background-color: rgb(25, 119, 150);
 }
-.LogIn-Register form h1{
+
+.LogIn-Register form h1 {
     margin-bottom: 30px;
 }
 
@@ -150,7 +162,7 @@ main {
     max-width: 1300px;
 }
 
-.NewsPage div h3{
+.NewsPage div h3 {
     font-size: 20px;
 }
 
@@ -182,6 +194,7 @@ main {
     .title {
         font-size: 12px;
     }
+
     .NewsPage {
         display: flex;
         flex-direction: column;
@@ -195,7 +208,8 @@ main {
 /* Header css */
 header {
     z-index: 2;
-  }
+}
+
 nav {
     position: fixed;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
@@ -203,10 +217,10 @@ nav {
     letter-spacing: 2px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     z-index: 2;
-   
+
 }
 
-nav ul{
+nav ul {
     background-color: #fff;
     width: 109%;
     list-style: none;
@@ -215,6 +229,7 @@ nav ul{
     align-items: center;
 
 }
+
 nav li {
     height: 50px;
 }
@@ -227,18 +242,21 @@ nav a {
     display: flex;
     align-items: center;
 }
-nav a:hover{
-background-color: #f0f0f0;
-font-size: larger;
-font-weight: bold;
+
+nav a:hover {
+    background-color: #f0f0f0;
+    font-size: larger;
+    font-weight: bold;
 }
-nav :first-child{
+
+nav :first-child {
     color: rgb(0, 0, 0);
     letter-spacing: 5px;
     font-size: x-large;
-    margin-right:  auto;
+    margin-right: auto;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 nav .dropdown {
     display: inline-block;
 }
@@ -265,7 +283,8 @@ nav .dropdown-content a:hover {
 nav .dropdown:hover .dropdown-content {
     display: block;
 }
-.sidebar{
+
+.sidebar {
     position: fixed;
     top: 0;
     right: 0;
@@ -279,81 +298,94 @@ nav .dropdown:hover .dropdown-content {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    
+
 }
-.sidebar li{
+
+.sidebar li {
     width: 100%;
 }
-.sidebar a{
+
+.sidebar a {
     width: 100%;
 }
-.butoni{
+
+.butoni {
     display: none;
 }
-@media(max-width: 1850px){
-    .hideOnMobile{
+
+@media(max-width: 1850px) {
+    .hideOnMobile {
         display: none;
     }
-    .butoni{
+
+    .butoni {
         display: block;
     }
 }
-@media(max-width: 470px){
-    .sidebar{
+
+@media(max-width: 470px) {
+    .sidebar {
         width: 100%;
     }
-    .largo{
+
+    .largo {
         display: none;
     }
 }
 
 /* footer css */
 
-footer{
-background-color: #111;
+footer {
+    background-color: #111;
 }
 
 .FooterC {
-width: auto;
-padding: 50px 40px 20px;
+    width: auto;
+    padding: 50px 40px 20px;
 }
 
 .logot {
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
 }
-.logot a{
+
+.logot a {
     text-decoration: none;
     padding: 15px;
     background-color: #fff;
     margin: 10px;
     border-radius: 40%;
 }
-.logot a i{
+
+.logot a i {
     font-size: 2em;
     color: black;
     opacity: 0.9;
 }
-.logot a:hover{
-   background-color: #111;
+
+.logot a:hover {
+    background-color: #111;
     transition: 0.5s;
 }
-.logot a:hover i{
+
+.logot a:hover i {
     color: #fff;
     transition: 0.5;
 }
-.referencat{
+
+.referencat {
     margin: 30px 0;
 }
-.referencat ul{
+
+.referencat ul {
     display: flex;
     justify-content: space-around;
     list-style: none;
 }
 
-.referencat ul li a{
+.referencat ul li a {
     font-weight: bold;
-text-transform: uppercase;
+    text-transform: uppercase;
     text-decoration: none;
     margin: 20px;
     font-size: 1.3em;
@@ -372,185 +404,208 @@ text-transform: uppercase;
     display: flex;
     justify-content: center;
     font-size: 120%;
-    
+
 }
 
 .Copy p {
     color: white;
 }
-@media all and (max-width:850px){
-    .referencat ul{
+
+@media all and (max-width:850px) {
+    .referencat ul {
         flex-direction: column;
     }
-    .referencat ul li{
+
+    .referencat ul li {
         width: 100%;
         text-align: center;
         margin: 15px;
         padding: 10px;
     }
 }
-@media(max-width:500px){
-    .Copy{
+
+@media(max-width:500px) {
+    .Copy {
         font-size: smaller;
     }
 }
-@media(max-width:600px){
-    .FooterC{
+
+@media(max-width:600px) {
+    .FooterC {
         width: auto;
     }
 }
-.about-us{
-  height: 100vh;
-  width: 100%;
-  padding: 90px 0;
-  background: #ddd;
+
+.about-us {
+    height: 100vh;
+    width: 100%;
+    padding: 90px 0;
+    background: #ddd;
 }
 
-.about{
-  width: 1130px;
-  max-width: 85%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.text{
-  width: 540px;
-}
-.text h2{
-  font-size: 90px;
-  font-weight: 600;
-  margin-bottom: 10px;
-
-}
-.text h5{
-  font-size: 22px;
-  font-weight: 500;
-  margin-bottom: 20px;
-}
-span{
-  color: #4070f4;
+.about {
+    width: 1130px;
+    max-width: 85%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.data{
-  margin-top: 30px;
+.text {
+    width: 540px;
 }
-.hire{
-  font-size: 30px;
-  background: #111;
-  color: #fff;
-  text-decoration: none;
-  border: none;
-  padding: 8px 25px;
-  font-weight: bold;
-  border-radius: 6px;
-  transition: 0.5s;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+.text h2 {
+    font-size: 90px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
 }
-.hire:hover{
+
+.text h5 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+span {
+    color: #4070f4;
+}
+
+.data {
+    margin-top: 30px;
+}
+
+.hire {
+    font-size: 30px;
+    background: #111;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    padding: 8px 25px;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.5s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.hire:hover {
     background: #f0f0f0;
     color: #111;
 }
-   #back-to-top-btn {
-      position: fixed;
-      bottom: -50px; 
-      right: 10px;
-      background-color: #fff;
-      color: #000
-      border: none;
-      border-radius: 10px;
-      padding: 10px 15px;
-      cursor: pointer;
-      font-size: 17px;
-      transition: bottom 0.9s ease;
-      
-   }
 
-    #back-to-top-btn:hover {
-      background-color:#000;
-      color: #fff;
-    }
+#back-to-top-btn {
+    position: fixed;
+    bottom: -50px;
+    right: 10px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: bottom 0.9s ease;
 
-    @keyframes slideIn {
-      from {
+}
+
+#back-to-top-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+@keyframes slideIn {
+    from {
         bottom: -50px;
-      }
-      to {
-        bottom: 20px;
-      }
     }
+
+    to {
+        bottom: 20px;
+    }
+}
+
+
 .slideshow-container {
-  max-width: 100%;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20px;
-  margin-top: 53px;
-  z-index: 1;
+    max-width: 100%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    margin-top: 53px;
+    z-index: 1;
 }
 
 
 .mySlides {
-  display: none;
+    display: none;
 }
 
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
 
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
 }
 
 
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
 }
+
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
-@media (max-width: 700px){
+@media (max-width: 700px) {
     .slideshow-container {
         margin-top: 100px;
     }
