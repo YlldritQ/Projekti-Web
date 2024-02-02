@@ -31,7 +31,12 @@ session_start();
                 <li onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
                 <li onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <?php
-                if(isset($_SESSION['ID'])){
+                if (isset($_SESSION['ID'])) {
+                    echo '<li > Welcome, ' . $_SESSION['Username'] . '</li>';
+                    if($_SESSION['isAdmin'] == 1){
+                        echo '<li onclick="openLink(\'MonitoroUsers.php\')"><a href="#">Users</a></li>';
+                        echo '<li onclick="openLink(\'upload.php\')"><a href="#">InsertNews</a></li>';
+                    }
                     echo '<li onclick="openLink(\'LogOut.php\')"><a href="#">Log Out</a></li>';
                 }else{
                     echo '<li onclick="openLink(\'LogInForm.php\')"><a href="#">Log In</a></li>';
@@ -47,19 +52,17 @@ session_start();
                 <li class="hideOnMobile" onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
                 <li class="hideOnMobile" onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <?php
-if(isset($_SESSION['ID'])){
-    echo '<li class="dropdown">
-              <a href="#" class="dropbtn">Welcome, ' . $_SESSION['Username'] . '!</a>
-              <div class="dropdown-content">
-                <a href="#">Profile</a>
-                <a href="#">Settings</a>
-                <a href="LogOut.php">Log Out</a>
-              </div>
-          </li>';
-}else{
-    echo '<li onclick="openLink(\'LogInForm.php\')"><a href="#">Log In</a></li>';
-}
-?>
+                if (isset($_SESSION['ID'])) {
+                    echo '<li class="hideOnMobile"> Welcome, ' . $_SESSION['Username'] . '</li>';
+                    if($_SESSION['isAdmin'] == 1){
+                        echo '<li class="hideOnMobile" onclick="openLink(\'MonitoroUsers.php\')"><a href="#">User</a></li>';
+                        echo '<li class="hideOnMobile" onclick="openLink(\'upload.php\')"><a href="#">InsertNews</a></li>';
+                    }
+                    echo '<li class="hideOnMobile" onclick="openLink(\'LogOut.php\')"><a href="#">Log Out</a></li>';
+                }else{
+                    echo '<li class="hideOnMobile" onclick="openLink(\'LogInForm.php\')"><a href="#">Log In</a></li>';
+                }
+                ?>
 
                 <li class="butoni" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
@@ -76,69 +79,50 @@ if(isset($_SESSION['ID'])){
                 const sidebar = document.querySelector('.sidebar')
                 sidebar.style.display = 'none'
             }
+            const slider = document.querySelector('.slider');
+            let currentIndex = 0;
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slider.children.length;
+                updateSlider();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
+                updateSlider();
+            }
+
+            function updateSlider() {
+                const translateValue = -currentIndex * 100 + '%';
+                slider.style.transform = 'translateX(' + translateValue + ')';
+            }
+
+            setInterval(nextSlide, 4000);
+
+            var mybutton = document.getElementById("back-to-top-btn");
+
+            window.onscroll = function() {
+                scrollFunction();
+            };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    mybutton.style.animation = "slideIn 0.3s forwards";
+                } else {
+                    mybutton.style.animation = "";
+                }
+            }
+
+            function scrollToTop() {
+                document.body.scrollTop = 0;
+                document.documentElement.scrollTop = 0;
+            }
         </script>
-        <script src="script.js"></script>
     </header>
 
     <main>
-    <div class="slider-container">
-    <div class="slider">
-        <?php
-        foreach ($lajmi as $index => $lajmet) {
-            echo '<div class="slide" data-index="' . $index . '"><img src="' . $lajmet['Img_Link'] . '" alt="Slide"></div>';
-        }
-        ?>
-    </div>
-    <button class="slider-arrow prev" onclick="prevSlide()">Previous</button>
-    <button class="slider-arrow next" onclick="nextSlide()">Next</button>
-</div>
+        <button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
 
-    <script>
-   const slider = document.querySelector('.slider');
-let currentIndex = 0;
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slider.children.length;
-    updateSlider();
-}
-
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
-    updateSlider();
-}
-
-function updateSlider() {
-    const translateValue = -currentIndex * 100 + '%';
-    slider.style.transform = 'translateX(' + translateValue + ')';
-}
-
-setInterval(nextSlide, 4000);
-
-</script>
-
-
-    <button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
-        <script>
-  
-            var mybutton = document.getElementById("back-to-top-btn");
-        
-            window.onscroll = function() {
-              scrollFunction();
-            };
-        
-            function scrollFunction() {
-              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                mybutton.style.animation = "slideIn 0.3s forwards"; 
-              } else {
-                mybutton.style.animation = ""; 
-              }
-            }
-        
-            function scrollToTop() {
-              document.body.scrollTop = 0;
-              document.documentElement.scrollTop = 0;
-            }
-          </script>
         <?php
         include_once 'lajmiRepository.php';
         include_once 'lajmi.php';
@@ -163,7 +147,7 @@ setInterval(nextSlide, 4000);
             ";
         }
 
-        
+
         ?>
 
     </main>
@@ -188,7 +172,6 @@ setInterval(nextSlide, 4000);
         <div class="Copy">
             <p>Copyright ©2023; Designed by <strong>Leutrim & Ylldrit</strong> </p>
         </div>
-        <script src="script.js"></script>
     </footer>
 </body>
 <script src="script.js"></script>
