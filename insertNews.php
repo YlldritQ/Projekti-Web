@@ -70,6 +70,9 @@ session_start();
             outline: none;
             border: 2px solid #000;
         }
+        #desc{
+            
+        }
 
         @media (max-width: 600px) {
             form {
@@ -101,7 +104,7 @@ session_start();
         <div>
             <h1>Description: </h1>
             <br>
-            <input type="text" name="description" required>
+            <input type="text" name="description" id="desc" required>
         </div>
         <div>
             <h1>Permbajtja: </h1>

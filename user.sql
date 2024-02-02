@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 02, 2024 at 03:34 AM
+-- Generation Time: Feb 02, 2024 at 11:57 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,8 +42,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `name`, `surname`, `email`, `username`, `password`, `IsAdmin`) VALUES
-(1, 'Ylldrit', 'Qallakaj', 'yq68447@ubt-uni.net', 'yq123', 'arilena12', 1),
-(11, 'Leutrim', 'Morina', 'leo123@gmail.com', 'leo123', 'leo123123', 0);
+(1, 'Ylldriti', 'Qallakaj', 'yq68447@ubt-uni.net', 'yq1234', 'yq123123', 1),
+(11, 'Leutrim', 'Morina', 'leo123@gmail.com', 'leo123', 'leo123123', 1);
 
 --
 -- Indexes for dumped tables
