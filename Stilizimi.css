@@ -196,10 +196,9 @@ main {
 
 nav {
     position: fixed;
-    
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
    
@@ -238,6 +237,32 @@ nav :first-child{
     margin-right:  auto;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+nav .dropdown {
+    display: inline-block;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+nav .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+nav .dropdown-content a:hover {
+    background-color: #f0f0f0;
+}
+
+nav .dropdown:hover .dropdown-content {
+    display: block;
+}
 .sidebar{
     position: fixed;
     top: 0;
@@ -263,7 +288,7 @@ nav :first-child{
 .butoni{
     display: none;
 }
-@media(max-width: 1800px){
+@media(max-width: 1850px){
     .hideOnMobile{
         display: none;
     }

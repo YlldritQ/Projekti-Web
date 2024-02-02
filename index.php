@@ -47,12 +47,20 @@ session_start();
                 <li class="hideOnMobile" onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
                 <li class="hideOnMobile" onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <?php
-                if(isset($_SESSION["ID"])){
-                    echo '<li class="hideOnMobile" onclick="openLink(\'LogOut.php\')"><a href="#">Log Out</a></li>';
-                }else{
-                    echo '<li class="hideOnMobile" onclick="openLink(\'LogInForm.php\')"><a href="#">Log In</a></li>';
-                }
-                ?>
+if(isset($_SESSION['ID'])){
+    echo '<li class="dropdown">
+              <a href="#" class="dropbtn">Welcome, ' . $_SESSION['Username'] . '!</a>
+              <div class="dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">Settings</a>
+                <a href="LogOut.php">Log Out</a>
+              </div>
+          </li>';
+}else{
+    echo '<li onclick="openLink(\'LogInForm.php\')"><a href="#">Log In</a></li>';
+}
+?>
+
                 <li class="butoni" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                         </svg></a></li>
@@ -73,40 +81,40 @@ session_start();
     </header>
 
     <main>
-
     <div class="slider-container">
-        <div class="slider">
-            <div class="slide"><img src="" alt="foto"></div>
-            <div class="slide"><img src="" alt="foto"></div>
-            <div class="slide"><img src="" alt="foto"></div>
-            
-        </div>
+    <div class="slider">
+        <?php
+        foreach ($lajmi as $index => $lajmet) {
+            echo '<div class="slide" data-index="' . $index . '"><img src="' . $lajmet['Img_Link'] . '" alt="Slide"></div>';
+        }
+        ?>
     </div>
-
-
+    <button class="slider-arrow prev" onclick="prevSlide()">Previous</button>
+    <button class="slider-arrow next" onclick="nextSlide()">Next</button>
+</div>
 
     <script>
-    const slider = document.querySelector('.slider');
-    let currentIndex = 0;
+   const slider = document.querySelector('.slider');
+let currentIndex = 0;
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slider.children.length;
-        updateSlider();
-    }
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slider.children.length;
+    updateSlider();
+}
 
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
-        updateSlider();
-    }
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
+    updateSlider();
+}
 
-    function updateSlider() {
-        const translateValue = -currentIndex * 100 + '%';
-        slider.style.transform = 'translateX(' + translateValue + ')';
-    }
+function updateSlider() {
+    const translateValue = -currentIndex * 100 + '%';
+    slider.style.transform = 'translateX(' + translateValue + ')';
+}
 
-     //setInterval(nextSlide, 3000);
+setInterval(nextSlide, 4000);
+
 </script>
-
 
 
     <button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
