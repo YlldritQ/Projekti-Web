@@ -16,7 +16,6 @@ session_start();
     <link rel="stylesheet" href="Stilizimi.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <header>
         <nav>
@@ -32,7 +31,7 @@ session_start();
                 <li onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <?php
                 if (isset($_SESSION['ID'])) {
-                    echo '<li > Welcome, ' . $_SESSION['Username'] . '</li>';
+                    echo '<li><a href="#">Welcome ' . $_SESSION['Username'] . '</a></li>';
                     if($_SESSION['isAdmin'] == 1){
                         echo '<li onclick="openLink(\'MonitoroUsers.php\')"><a href="#">Users</a></li>';
                         echo '<li onclick="openLink(\'upload.php\')"><a href="#">InsertNews</a></li>';
@@ -53,7 +52,7 @@ session_start();
                 <li class="hideOnMobile" onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <?php
                 if (isset($_SESSION['ID'])) {
-                    echo '<li class="hideOnMobile"> Welcome, ' . $_SESSION['Username'] . '</li>';
+                    echo '<li class="hideOnMobile"><a href="#">Welcome  ' . $_SESSION['Username'] . '</a></li>';
                     if($_SESSION['isAdmin'] == 1){
                         echo '<li class="hideOnMobile" onclick="openLink(\'MonitoroUsers.php\')"><a href="#">User</a></li>';
                         echo '<li class="hideOnMobile" onclick="openLink(\'upload.php\')"><a href="#">InsertNews</a></li>';
@@ -79,49 +78,95 @@ session_start();
                 const sidebar = document.querySelector('.sidebar')
                 sidebar.style.display = 'none'
             }
-            const slider = document.querySelector('.slider');
-            let currentIndex = 0;
 
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % slider.children.length;
-                updateSlider();
-            }
+            let slideIndex = 1;
+showSlides(slideIndex);
 
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + slider.children.length) % slider.children.length;
-                updateSlider();
-            }
 
-            function updateSlider() {
-                const translateValue = -currentIndex * 100 + '%';
-                slider.style.transform = 'translateX(' + translateValue + ')';
-            }
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
 
-            setInterval(nextSlide, 4000);
 
-            var mybutton = document.getElementById("back-to-top-btn");
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-            window.onscroll = function() {
-                scrollFunction();
-            };
-
-            function scrollFunction() {
-                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                    mybutton.style.animation = "slideIn 0.3s forwards";
-                } else {
-                    mybutton.style.animation = "";
-                }
-            }
-
-            function scrollToTop() {
-                document.body.scrollTop = 0;
-                document.documentElement.scrollTop = 0;
-            }
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+var mybutton = document.getElementById("back-to-top-btn");
+        
+        window.onscroll = function() {
+          scrollFunction();
+        };
+    
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.animation = "slideIn 0.3s forwards"; // play the slideIn animation
+          } else {
+            mybutton.style.animation = ""; // reset the animation when not needed
+          }
+        }
+    
+        function scrollToTop() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
         </script>
     </header>
 
     <main>
-        <button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
+    <div class="slideshow-container">
+
+  
+<div class="mySlides fade">
+  <div class="numbertext">1 / 5</div>
+  <img src="Foto/foto3.png" style="width:100%">
+  <div class="text">Caption One</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 5</div>
+  <img src="Foto/foto2.png" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 5</div>
+  <img src="Foto/foto1.png" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+<div class="mySlides fade">
+    <div class="numbertext">4 / 5</div>
+    <img src="Foto/foto4.png" style="width:100%">
+    <div class="text">Caption Four</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 5</div>
+    <img src="Foto/foto5.png" style="width:100%">
+    <div class="text">Caption Five</div>
+  </div>
+
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
 
         <?php
         include_once 'lajmiRepository.php';
@@ -163,7 +208,7 @@ session_start();
                 <ul>
                     <li><a href="#">home</a></li>
                     <li><a href="#">news</a></li>
-                    <li onclick="openLink('about us.html')"><a href="#">about us</a></li>
+                    <li onclick="openLink('about us.php')"><a href="#">about us</a></li>
                     <li><a href="#">contact us</a></li>
                     <li><a href="#">our team</a></li>
                 </ul>
