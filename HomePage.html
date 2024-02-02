@@ -56,7 +56,74 @@
     </header>
 
     <main>
-        <button class="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
+        <div class="slideshow-container">
+
+  
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 5</div>
+              <img src="Foto/foto3.png" style="width:100%">
+              <div class="text">Caption One</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 5</div>
+              <img src="Foto/foto2.png" style="width:100%">
+              <div class="text">Caption Two</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 5</div>
+              <img src="Foto/foto1.png" style="width:100%">
+              <div class="text">Caption Three</div>
+            </div>
+            <div class="mySlides fade">
+                <div class="numbertext">4 / 5</div>
+                <img src="Foto/foto4.png" style="width:100%">
+                <div class="text">Caption Four</div>
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext">5 / 5</div>
+                <img src="Foto/foto5.png" style="width:100%">
+                <div class="text">Caption Five</div>
+              </div>
+          
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          <script>
+            let slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+          </script>
+
+        <button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
         <script>
   
             var mybutton = document.getElementById("back-to-top-btn");

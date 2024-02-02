@@ -77,14 +77,26 @@ class UserRepository{
         echo "<script>alert('delete was successful'); </script>";
    }
    
-   function adminDistribution($id, $isAdmin){
+   function makeAdmin($id){
     $conn = $this->connection;
 
-    $sql = "UPDATE user SET IsAdmin=? WHERE ID=?";
+    $sql = "UPDATE user SET IsAdmin=1 WHERE ID=?";
 
     $statement = $conn->prepare($sql);
 
-    $statement->execute([$isAdmin, $id]);
+    $statement->execute([$id]);
+
+    echo "<script>alert('update was successful'); </script>";
+   }
+
+   function removeAdmin($id){
+    $conn = $this->connection;
+
+    $sql = "UPDATE user SET IsAdmin=0 WHERE ID=?";
+
+    $statement = $conn->prepare($sql);
+
+    $statement->execute([$id]);
 
     echo "<script>alert('update was successful'); </script>";
    }
