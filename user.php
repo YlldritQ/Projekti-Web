@@ -7,6 +7,7 @@ class User{
     private $email;
     private $username;
     private $password;
+    private $isAdmin;
 
 
     function __construct($id,$name,$surname,$email,$username,$password){

@@ -31,7 +31,13 @@ session_start();
                 <li onclick="openLink('ekonomi.php')"><a href="#">ekonomi</a></li>
                 <li onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
                 <li onclick="openLink('sport.php')"><a href="#">sport</a></li>
-                <li onclick="openLink('LogInForm.php')"><a href="#">Sign In</a></li>
+                <?php
+                if(isset($_SESSION["ID"])){
+                    echo '<li onclick="openLink(\'LogOut.php\')"><a href="#">Log Out</a></li>';
+                }else{
+                    echo '<li onclick="openLink(\'LogInForm.php\')"><a href="#">Log In</a></li>';
+                }
+                ?>
             </ul>
             <ul>
                 <li class="largo"><a href="index.php"><strong>Ylldrit & Leutrim</strong></a></li>
@@ -41,8 +47,13 @@ session_start();
                 <li class="hideOnMobile" onclick="openLink('ekonomi.php')"><a href="#">ekonomi</a></li>
                 <li class="hideOnMobile" onclick="openLink('kulture.php')"><a href="#">kulture</a></li>
                 <li class="hideOnMobile" onclick="openLink('sport.php')"><a href="#">sport</a></li>
-                <li class="hideOnMobile" onclick="openLink('LogInForm.php')"><a href="#">Sign In</a></li>
-                <li class="butoni" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+                <?php
+                if(isset($_SESSION["ID"])){
+                    echo '<li class="hideOnMobile" onclick="openLink(\'LogOut.php\')"><a href="#">Log Out</a></li>';
+                }else{
+                    echo '<li class="hideOnMobile" onclick="openLink(\'LogInForm.php\')"><a href="#">Log In</a></li>';
+                }
+                ?><li class="butoni" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
                             <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
                         </svg></a></li>
             </ul>

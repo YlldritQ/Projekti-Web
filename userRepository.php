@@ -88,6 +88,28 @@ class UserRepository{
 
     echo "<script>alert('update was successful'); </script>";
    }
+
+   function getUserByUsername($username){
+    $conn = $this->connection;
+
+    $sql = "SELECT * FROM user WHERE username='$username'";
+
+    $statement = $conn->query($sql);
+    $user = $statement->fetch();
+
+    return $user;
+    }
+
+   function getUserByEmail($email){
+    $conn = $this->connection;
+
+    $sql = "SELECT * FROM user WHERE email='$email'";
+
+    $statement = $conn->query($sql);
+    $user = $statement->fetch();
+
+    return $user;
+    }
 }
 
 ?>
