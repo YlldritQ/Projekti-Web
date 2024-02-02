@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 01, 2024 at 06:45 PM
+-- Generation Time: Feb 02, 2024 at 03:34 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -42,8 +42,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`ID`, `name`, `surname`, `email`, `username`, `password`, `IsAdmin`) VALUES
-(1, 'Ylldrit', 'Qallakaj', 'yq68447@ubt-uni.net', 'yq123', '12345', 1),
-(2, 'Asdasd', 'Asdas', 'deathreape123', 'ylldrit_bosi@hotmail', 'aeilena12', 0);
+(1, 'Ylldrit', 'Qallakaj', 'yq68447@ubt-uni.net', 'yq123', 'arilena12', 1),
+(11, 'Leutrim', 'Morina', 'leo123@gmail.com', 'leo123', 'leo123123', 0);
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
