@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$folderName = "upload";
+$folderName = "uploads";
 
 
 if (!file_exists($folderName)) {
