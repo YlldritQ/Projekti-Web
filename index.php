@@ -31,13 +31,8 @@ session_start();
                 <li onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <?php
                 if (isset($_SESSION['ID'])) {
-<<<<<<< Updated upstream
-                    echo '<li><a href="#">Welcome ' . $_SESSION['Username'] . '</a></li>';
-                    if($_SESSION['isAdmin'] == 1){
-=======
                     echo '<li > Welcome, ' . $_SESSION['Username'] . '</li>';
                     if ($_SESSION['isAdmin'] == 1) {
->>>>>>> Stashed changes
                         echo '<li onclick="openLink(\'MonitoroUsers.php\')"><a href="#">Users</a></li>';
                         echo '<li onclick="openLink(\'upload.php\')"><a href="#">InsertNews</a></li>';
                     }
@@ -57,13 +52,8 @@ session_start();
                 <li class="hideOnMobile" onclick="openLink('sport.php')"><a href="#">sport</a></li>
                 <?php
                 if (isset($_SESSION['ID'])) {
-<<<<<<< Updated upstream
-                    echo '<li class="hideOnMobile"><a href="#">Welcome  ' . $_SESSION['Username'] . '</a></li>';
-                    if($_SESSION['isAdmin'] == 1){
-=======
                     echo '<li class="hideOnMobile"> Welcome, ' . $_SESSION['Username'] . '</li>';
                     if ($_SESSION['isAdmin'] == 1) {
->>>>>>> Stashed changes
                         echo '<li class="hideOnMobile" onclick="openLink(\'MonitoroUsers.php\')"><a href="#">User</a></li>';
                         echo '<li class="hideOnMobile" onclick="openLink(\'upload.php\')"><a href="#">InsertNews</a></li>';
                     }
@@ -88,7 +78,6 @@ session_start();
                 const sidebar = document.querySelector('.sidebar')
                 sidebar.style.display = 'none'
             }
-<<<<<<< Updated upstream
 
             let slideIndex = 1;
 showSlides(slideIndex);
@@ -136,16 +125,12 @@ var mybutton = document.getElementById("back-to-top-btn");
           document.body.scrollTop = 0;
           document.documentElement.scrollTop = 0;
         }
-=======
-            
->>>>>>> Stashed changes
         </script>
     </header>
 
     <main>
     <div class="slideshow-container">
 
-<<<<<<< Updated upstream
   
 <div class="mySlides fade">
   <div class="numbertext">1 / 5</div>
@@ -163,110 +148,25 @@ var mybutton = document.getElementById("back-to-top-btn");
   <div class="numbertext">3 / 5</div>
   <img src="Foto/foto1.png" style="width:100%">
   <div class="text">Caption Three</div>
-=======
-
-<div class="mySlides fade">
-    <div class="numbertext">1 / 5</div>
-    <img src="Foto/foto3.png" style="width:100%">
-    <div class="text">Caption One</div>
-</div>
-
-<div class="mySlides fade">
-    <div class="numbertext">2 / 5</div>
-    <img src="Foto/foto2.png" style="width:100%">
-    <div class="text">A e dini se stina e dimrit dëmton 
-                baterinë e celularit tuaj? Arsyet do t’iu befasojnë</div>
-</div>
-
-<div class="mySlides fade">
-    <div class="numbertext">3 / 5</div>
-    <img src="Foto/foto6.png" style="width:100%">
-    <div class="text">Caption Three</div>
->>>>>>> Stashed changes
 </div>
 <div class="mySlides fade">
     <div class="numbertext">4 / 5</div>
     <img src="Foto/foto4.png" style="width:100%">
     <div class="text">Caption Four</div>
-<<<<<<< Updated upstream
   </div>
   <div class="mySlides fade">
     <div class="numbertext">5 / 5</div>
     <img src="Foto/foto5.png" style="width:100%">
     <div class="text">Caption Five</div>
   </div>
-=======
-</div>
-<div class="mySlides fade">
-    <div class="numbertext">5 / 5</div>
-    <img src="Foto/foto5.png" style="width:100%">
-    <div class="text">Caption Five</div>
-</div>
->>>>>>> Stashed changes
 
 
 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 </div>
 <br>
-<<<<<<< Updated upstream
 
 <button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
-=======
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
-</script>
-
-<button id="back-to-top-btn" onclick="scrollToTop()">Back to Top</button>
-<script>
-
-var mybutton = document.getElementById("back-to-top-btn");
-
-window.onscroll = function () {
-    scrollFunction();
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.animation = "slideIn 0.3s forwards"; // play the slideIn animation
-    } else {
-        mybutton.style.animation = ""; // reset the animation when not needed
-    }
-}
-
-function scrollToTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-</script>
->>>>>>> Stashed changes
 
         <?php
         include_once 'lajmiRepository.php';
