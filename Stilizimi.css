@@ -536,12 +536,10 @@ span {
 
 
 .slideshow-container {
-    max-width: 100%;
+    max-width: 1000px;
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 20px;
-    margin-top: 53px;
+    margin: auto;
+    overflow: hidden;
     z-index: 1;
 }
 
@@ -614,13 +612,25 @@ span {
     }
 }
 
-@media (max-width: 700px) {
+@media screen and (max-width: 600px) {
     .slideshow-container {
-        margin-top: 100px;
+      width: 100%;
     }
-}
-
-#welcome{
-    display: none;
-
-}
+  
+    .mySlides {
+      width: 100%;
+    }
+  
+    .text {
+      font-size: 14px;
+    }
+  
+    .numbertext {
+      font-size: 12px;
+    }
+  
+    .prev,
+    .next {
+      font-size: 18px;
+    }
+  }

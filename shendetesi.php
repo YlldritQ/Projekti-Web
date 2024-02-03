@@ -219,7 +219,7 @@ session_start();
                 <ul>
                     <li><a href="#">home</a></li>
                     <li><a href="#">news</a></li>
-                    <li onclick="openLink('about us.html')"><a href="#">about us</a></li>
+                    <li onclick="openLink('about us.php')"><a href="#">about us</a></li>
                     <li><a href="#">contact us</a></li>
                     <li><a href="#">our team</a></li>
                 </ul>
