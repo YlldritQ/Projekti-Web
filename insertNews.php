@@ -63,15 +63,28 @@ session_start();
         }
 
         input[type="submit"]:hover {
-            background-color:#333;
+            background-color: #333;
         }
 
         input[type="text"]:focus {
             outline: none;
             border: 2px solid #000;
         }
-        #desc{
-            
+
+
+        textarea {
+            resize: none;
+            width: 100%;
+            white-space: pre-line;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        img{
+            max-width: 100%;
         }
 
         @media (max-width: 600px) {
@@ -88,9 +101,9 @@ session_start();
 
 <body>
     <form action='transfer.php' method='post'>
-            <h1>Title: </h1>
-            <br>
-            <input type="text" name="title" required>
+        <h1>Title: </h1>
+        <br>
+        <textarea name="title" oninput="autoExpand(this)"></textarea>
         <h1>Photo Gallery</h1>
         <div>
             <?php
@@ -104,18 +117,18 @@ session_start();
         <div>
             <h1>Description: </h1>
             <br>
-            <input type="text" name="description" id="desc" required>
+            <textarea name="description" oninput="autoExpand(this)"></textarea>
         </div>
         <div>
             <h1>Permbajtja: </h1>
             <br>
-            <input type="text" name="permbajtja" required>
+            <textarea name="permbajtja" oninput="autoExpand(this)"></textarea>
         </div>
-        <div>
+        <!-- <div>
             <h1>Video-Link: </h1>
             <br>
             <input type="text" placeholder="Can Be Empty" name="videoLink">
-        </div>
+        </div> -->
         <div>
             <h1>Kategoria: </h1>
             <br>
@@ -123,7 +136,13 @@ session_start();
         </div>
         <input type="submit" name="Add">
     </form>
+    <script>
+    function autoExpand(textarea) {
+      // Adjust the height of the textarea based on its scrollHeight
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+  </script>
 </body>
 
 </html>
-

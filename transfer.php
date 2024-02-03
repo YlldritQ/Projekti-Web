@@ -37,7 +37,7 @@ if ($handle = opendir($source_dir)) {
         include_once 'lajmiRepository.php';
         include_once 'lajmi.php';
         $lajmi = new Lajmi(null, $_POST["title"], str_replace("uploads/", "Foto/", $_SESSION["imgLink"]), date('Y-m-d'),
-         $_POST["description"], $_POST["permbajtja"], $_POST["videoLink"], $_POST["kategoria"] ,$_SESSION["ID"]);
+         $_POST["description"], $_POST["permbajtja"],null, $_POST["kategoria"] ,$_SESSION["ID"]);
          $LajmiRepo = new LajmiRepository;
          $LajmiRepo->insertLajmi($lajmi);
         }
